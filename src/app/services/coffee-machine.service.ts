@@ -41,7 +41,7 @@ export class CoffeeMachineService {
 
   @Cacheable({
     cacheBusterObserver: cacheBuster,
-    maxAge: 180000
+    maxAge: 30000
   })
   getCoffeeMachineStatus(uuid: string): Observable<any> {
     return this.http.get<any>(`https://${uuid}.balena-devices.com/api/device/status`)

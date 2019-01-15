@@ -8,8 +8,8 @@
       <div class="coffee-machine-info__dropdown-option" *ngFor="let coffeeMachine of coffeeMachines">
         <img class="coffee-machine-info__coffee-machine-icon" alt="coffee-machine" src="../../../assets/icons/24/Coffeemaker/Dark.svg"/>
         <span class="coffee-machine-info__machine-option-name" (click)="initCoffeeMachineDetails(coffeeMachine)" (click)="toggleMachinePicker()">{{coffeeMachine.name}}</span>
-        <img *ngIf="coffeeMachineOn" class="coffee-machine-info__on-off-button" alt="on-off-button" src="../../../assets/pictograms/on-off-green.svg" (click)="toggleMachineOnOff(coffeeMachine.uuid, true)"/>
-        <img *ngIf="!coffeeMachineOn" class="coffee-machine-info__on-off-button" alt="on-off-button" src="../../../assets/pictograms/on-off-red.svg" (click)="toggleMachineOnOff(coffeeMachine.uuid, false)"/>
+        <img *ngIf="coffeeMachineDetails.machineIsOn" class="coffee-machine-info__on-off-button" alt="on-off-button" src="../../../assets/pictograms/on-off-green.svg" (click)="toggleMachineOnOff(coffeeMachine.uuid, true)"/>
+        <img *ngIf="!coffeeMachineDetails.machineIsOn" class="coffee-machine-info__on-off-button" alt="on-off-button" src="../../../assets/pictograms/on-off-red.svg" (click)="toggleMachineOnOff(coffeeMachine.uuid, false)"/>
       </div>
     </div>
   </div>

@@ -57,8 +57,6 @@ export class CoffeeMachineInfoComponent implements OnInit {
     this.machineDetailsInitialized = false;
     this.coffeeMachines = [];
 
-    this.coffeeMachineOn = false;
-
     this.showNotificationModal = false;
     this.modalMessages = [];
     this.modalType = 'info';
@@ -166,24 +164,26 @@ export class CoffeeMachineInfoComponent implements OnInit {
       .subscribe( coffeeMachineStatus => {
         const { water_tank_fill_level_in_percent: waterLevel,
           coffee_bean_container_fill_level_in_percent: coffeeLevel,
-          coffee_grounds_container_fill_level_in_percent: trashLevel } = coffeeMachineStatus;
+          coffee_grounds_container_fill_level_in_percent: trashLevel,
+          coffee_machine_runtime_state: machineIsOn } = coffeeMachineStatus;
 
         if (typeof waterLevel !== 'undefined' && typeof coffeeLevel !== 'undefined' && typeof trashLevel !== 'undefined') {
           this.coffeeMachineDetails.name = name;
           this.coffeeMachineDetails.coffeeLevel = coffeeLevel;
           this.coffeeMachineDetails.waterLevel = waterLevel;
           this.coffeeMachineDetails.trashLevel = trashLevel;
+          if (machineIsOn === 1) {
+            this.coffeeMachineDetails.machineIsOn = true;
+          } else if (machineIsOn === 2) {
+            this.coffeeMachineDetails.machineIsOn = false;
+          }
+
 
           // get the product id -> product name -> product type
           this.coffeeMachineService.getCoffeeMachineSettings(uuid)
             .subscribe( coffeeMachineSettings => {
-              const { coffee_product_id, price, coffee_machine_runtime_state: on } = coffeeMachineSettings;
+              const { coffee_product_id, price } = coffeeMachineSettings;
               this.coffeeMachineDetails.pricePerCoffeeInCents = price;
-              if (on === 1) {
-                this.coffeeMachineDetails.machineIsOn = true;
-              } else if (on === 2) {
-                this.coffeeMachineDetails.machineIsOn = false;
-              }
 
               this.getCoffeeProductById(coffee_product_id);
             });
@@ -240,14 +240,15 @@ export class CoffeeMachineInfoComponent implements OnInit {
     this.coffeeMachineService.putNewCoffeeMachineRuntimeState(uuid, runtimeState)
       .subscribe( coffeeMachineStatus => {
         const { coffee_machine_runtime_state: runtimeStateResponse } = coffeeMachineStatus;
+        console.log(`sent this: ${runtimeState} and got this response: ${runtimeStateResponse}`);
         if (runtimeStateResponse === runtimeState) {
           this.showNotificationModal = true;
           if (runtimeStateResponse === 1) {
             this.modalMessages = ['Die Kaffeemaschine wird angeschaltet. Bitte warte einen Moment...'];
-            this.coffeeMachineOn = true;
+            this.coffeeMachineDetails.machineIsOn = true;
           } else {
             this.modalMessages = ['Die Kaffeemaschine wird abgeschaltet. Bitte warte einen Moment...'];
-            this.coffeeMachineOn = false;
+            this.coffeeMachineDetails.machineIsOn = false;
           }
 
           this.modalType = 'info';
