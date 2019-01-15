@@ -180,6 +180,12 @@ export class CoffeePreferencesComponent implements OnInit {
             this.startButtonTextX = 12.8275;
             console.error(`something went wrong processing the new coffee job`);
           }
+        }, error => {
+          subscription.unsubscribe();
+          this.coffeeJobSendInProgress = false;
+          this.showNotificationModal = true;
+          this.modalType = 'error';
+          this.modalMessages = [error];
         });
     }
   }
