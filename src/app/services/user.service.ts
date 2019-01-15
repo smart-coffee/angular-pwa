@@ -35,6 +35,7 @@ export class UserService {
       );
   }
 
+
   postNewUser(newUser: any): Observable<any> {
     return this.http.post<any>(`${environment.webApiUrl}/public/users`, newUser)
       .pipe(

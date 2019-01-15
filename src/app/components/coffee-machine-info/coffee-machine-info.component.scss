@@ -86,6 +86,16 @@
     margin-right: 2%;
   }
 
+  &__machine-option-name {
+    flex: 1;
+  }
+
+  &__on-off-button {
+    height: 24px;
+    width: 24px;
+    margin: 0 24px;
+  }
+
   &__machine-fill-indicators {
     position: relative;
     display: flex;

@@ -6,4 +6,5 @@ export class CoffeeMachineDetails {
   pricePerCoffeeInCents: number;
   coffeeBrand: string;
   coffeeType: string;
+  machineIsOn: boolean;
 }

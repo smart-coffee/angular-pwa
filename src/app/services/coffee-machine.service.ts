@@ -4,7 +4,7 @@ import {Observable, Subject} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment.prod';
 import { ServiceError } from '../shared/errorhandling/service-error';
-import {Cacheable} from 'ngx-cacheable';
+import { Cacheable } from 'ngx-cacheable';
 
 const cacheBuster = new Subject<void>();
 
@@ -47,6 +47,14 @@ export class CoffeeMachineService {
     return this.http.get<any>(`https://${uuid}.balena-devices.com/api/device/status`)
       .pipe(
         catchError(this._error.handleError<any>(`getCoffeeMachineStatus`))
+      );
+  }
+
+  putNewCoffeeMachineRuntimeState(uuid: string, runtimeState: number): Observable<any> {
+    const runtimeStateObject = { coffee_machine_runtime_state: runtimeState };
+    return this.http.put<any>(`https://${uuid}.balena-devices.com/api/device/status`, runtimeStateObject)
+      .pipe(
+        catchError(this._error.handleError<any>(`putNewCoffeeMachineRuntimeStatus`))
       );
   }
 
