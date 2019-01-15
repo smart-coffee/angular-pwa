@@ -240,7 +240,6 @@ export class CoffeeMachineInfoComponent implements OnInit {
     this.coffeeMachineService.putNewCoffeeMachineRuntimeState(uuid, runtimeState)
       .subscribe( coffeeMachineStatus => {
         const { coffee_machine_runtime_state: runtimeStateResponse } = coffeeMachineStatus;
-        console.log(`sent this: ${runtimeState} and got this response: ${runtimeStateResponse}`);
         if (runtimeStateResponse === runtimeState) {
           this.showNotificationModal = true;
           if (runtimeStateResponse === 1) {

@@ -63,7 +63,7 @@ export class SignUpComponent implements OnInit {
       };
       this.userService.postNewUser(newUser)
         .subscribe( user => {
-          console.log(user);
+          this.navigateToSignIn();
         }, error => {
           this.showNotificationModal = true;
           this.modalType = 'error';
