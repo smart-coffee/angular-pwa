@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
+import { UpdateService } from './services/update.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +12,7 @@ export class AppComponent implements AfterViewInit {
 
   loading: boolean;
 
-  constructor (update: SwUpdate, private router: Router) {
-    update.available.subscribe(event => {
-      update.activateUpdate().then(() => document.location.reload());
-    });
-
+  constructor (private updateService: UpdateService, private router: Router) {
     this.loading = true;
   }
 
