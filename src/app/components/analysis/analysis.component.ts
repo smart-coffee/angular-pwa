@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-analysis',
@@ -9,12 +8,15 @@ import { Location } from '@angular/common';
 })
 export class AnalysisComponent implements OnInit {
 
-  constructor(private router: Router, private location: Location) { }
+  menuState: number;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.menuState = 1;
   }
 
-  onSwipeRight () {
-    this.location.back();
+  goToHome () {
+    this.router.navigate(['home']);
   }
 }

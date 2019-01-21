@@ -31,6 +31,8 @@ import { JwtInterceptor } from './shared/interceptors/jwt.interceptor';
 import { CoffeeLoaderComponent } from './components/coffee-loader/coffee-loader.component';
 import { CoffeePreparationComponent } from './components/coffee-preparation/coffee-preparation.component';
 import { ScModalComponent } from './components/sc-modal/sc-modal.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { MachineStatsComponent } from './components/machine-stats/machine-stats.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { ScModalComponent } from './components/sc-modal/sc-modal.component';
     CoffeeLoaderComponent,
     CoffeePreparationComponent,
     ScModalComponent,
+    OrderHistoryComponent,
+    MachineStatsComponent,
   ],
   imports: [
     BrowserModule,
