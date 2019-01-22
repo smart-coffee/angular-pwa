@@ -8,7 +8,7 @@ import { ServiceError } from '../shared/errorhandling/service-error';
 @Injectable({
   providedIn: 'root'
 })
-export class JobService {
+export class CoffeeJobService {
 
   private _error = new ServiceError();
 
