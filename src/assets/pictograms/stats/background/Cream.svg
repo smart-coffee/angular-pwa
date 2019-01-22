@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="152px" viewBox="0 0 375 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Stats/Background/Cream</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="26.7550835%" y1="89.5552212%" x2="92.3793088%" y2="-17.0433745%" id="linearGradient-1">
+            <stop stop-color="#EEDBCF" offset="0%"></stop>
+            <stop stop-color="#C0B3B3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Smart-Coffee-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage---Coffee-Stats-Order-History" transform="translate(0.000000, -208.000000)">
+            <g id="Creamy-Stats" transform="translate(0.000000, 208.000000)">
+                <g id="Stats/Background/Cream">
+                    <rect id="Rectangle" fill="#C7CBD1" x="0" y="112" width="48" height="40"></rect>
+                    <path d="M80,29.8967118 C111.731259,11.6398093 128,0 188,0 C248,0 256,20.8519369 296,20.8519369 C322.666667,20.8519369 349,13.9012913 375,0 L375,152 C265.131471,152 156.131471,152 48,152 C21.456386,152 5.45638599,138.736755 -2.84217094e-13,112.210265 L-2.84217094e-13,42.56 C32.1791604,46.2890762 58.845827,42.0679801 80,29.8967118 Z" id="Rectangle" fill="#F8ECDD"></path>
+                    <path d="M30.6716808,112 C43.2386621,118.788271 67.5277995,135 104,120 C140.4722,105 151.384745,96 189.985358,96 C228.585972,96 266.745489,125.070984 288,120 C310.499028,114.632094 332.754285,97.3043158 359,74 C362.047207,71.2942987 367.38054,67.9609654 375,64 L375,152 C236.223769,152 127.223769,152 48,152 C21.4754394,152 5.47543942,138.666667 -5.68434189e-14,112 C6.0442147,104.219662 16.2681083,104.219662 30.6716808,112 Z" id="Rectangle-Copy" fill-opacity="0.5" fill="url(#linearGradient-1)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

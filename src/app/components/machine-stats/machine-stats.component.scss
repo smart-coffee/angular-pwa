@@ -1,0 +1,45 @@
+@import '../../shared/styles/colors';
+@import '../../shared/styles/dimensions';
+@import '../../shared/styles/fonts';
+
+
+.machine-stats {
+
+  &__machine-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: $font-sc-hero;
+    color: $color-text-dark;
+    height: $font-lnheight-hero + 30px;
+  }
+
+  &__element {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__stat-description {
+    position: absolute;
+    margin-left: 15%;
+  }
+
+  &__background-image {
+    width: 100%;
+  }
+
+  &__stat-value {
+    font-size: 42px;
+    font-family: $font-family-paragraph, sans-serif;
+    font-weight: 700;
+    color: $color-text-dark;
+    width: 80px;
+  }
+
+  &__stat-text {
+    font: $font-sc-paragraph;
+    color: rgba($color-text-dark, .7);
+  }
+}

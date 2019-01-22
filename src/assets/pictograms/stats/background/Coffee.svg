@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="176px" viewBox="0 0 375 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Stats/Background/Coffee</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="52.8922976%" y1="54.7732433%" x2="48.7200781%" y2="132.512111%" id="linearGradient-1">
+            <stop stop-color="#FBFAFA" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#F5F4F2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Smart-Coffee-Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage---Coffee-Stats-Order-History" transform="translate(0.000000, -536.000000)">
+            <g id="Brownish-Stats" transform="translate(0.000000, 536.000000)">
+                <g id="Stats/Background/Coffee">
+                    <polygon id="Rectangle" fill="#B29382" points="0 -5.68434189e-14 375 -5.68434189e-14 375 176 7.2858386e-14 176"></polygon>
+                    <path d="M2.81164041e-14,156.315789 C61.1029531,134.07947 104.596595,122.961311 130.480925,122.961311 C169.307421,122.961311 169.307421,154 227.670434,154 C286.033447,154 269.065735,79.8947368 304,79.8947368 C338.934265,79.8947368 337,52.1052632 352,52.1052632 C362,52.1052632 369.666667,69.830758 375,105.281748 L375,176 L-2.84217094e-13,176 L2.81164041e-14,156.315789 Z" id="Rectangle" fill="url(#linearGradient-1)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
