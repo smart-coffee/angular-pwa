@@ -1,18 +1,18 @@
 <div class="analysis">
   <div class="analysis__header-wrapper">
     <div class="analysis__header">
-      <div class="home__header-back-icon">
+      <div class="analysis__header-back-icon">
         <img (click)="goToHome()" alt="back-icon" src="../../../assets/icons/24/Back/Dark.svg"/>
       </div>
-      <div class="analysis__header-title">Coffee Stats</div>
-      <div class="home__header-back-icon"></div>
+      <div class="analysis__header-title"><span>Coffee Stats</span></div>
+      <div class="analysis__header-back-icon"></div>
     </div>
 
     <div class="analysis__header-menu">
-      <div class="analysis__header-menu-item" (click)="menuState = 1">
+      <div class="analysis__header-menu-item {{menuState == 1 ? 'analysis__header-menu-item--active' : null}}" (click)="menuState = 1">
         <span>Kaufhistorie</span>
       </div>
-      <div class="analysis__header-menu-item" (click)="menuState = 2">
+      <div class="analysis__header-menu-item {{menuState == 2 ? 'analysis__header-menu-item--active' : null}}" (click)="menuState = 2">
         <span>Maschine</span>
       </div>
     </div>

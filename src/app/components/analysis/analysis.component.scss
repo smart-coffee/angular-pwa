@@ -14,11 +14,16 @@
     background-color: $color-primary;
     padding: 0 $mobile-side-margin;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba($color-text-dark, .4);
   }
 
   &__header {
     display: flex;
-    height: 56px;
+    height: $mobile-top-header-height;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -26,6 +31,8 @@
   }
 
   &__header-back-icon {
+    display: flex;
+    align-items: center;
     width: 24px;
     height: 24px;
   }
@@ -33,12 +40,12 @@
   &__header-title {
     font: $font-sc-title;
     text-align: center;
-    position: fixed;
+    flex: 1;
   }
 
   &__header-menu {
     display: flex;
-    height: 40px;
+    height: $mobile-bot-header-height;
     width: 100%;
     justify-content: center;
   }
@@ -57,9 +64,14 @@
     text-transform: uppercase;
     font: $font-sc-input-2;
     text-align: center;
+    border-bottom: 3px solid transparent;
 
     &--active {
       border-bottom: 3px solid $color-text-dark;
     }
+  }
+
+  &__content {
+    padding-top: $mobile-top-header-height + $mobile-bot-header-height;
   }
 }

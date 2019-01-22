@@ -1,0 +1,83 @@
+@import '../../shared/styles/colors';
+@import '../../shared/styles/dimensions';
+@import '../../shared/styles/fonts';
+
+
+.order-history {
+
+  padding-bottom: $mobile-top-header-height;
+  background-color: $color-background-light;
+
+  &__element {
+    display: flex;
+    flex-direction: row;
+    height: 96px;
+    width: 100%;
+    font: $font-sc-input-2;
+    color: $color-text-dark;
+
+    &:nth-child(odd) {
+      background-color: rgba($color-primary, .4);
+    }
+  }
+
+  &__element-left, &__element-right {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+  }
+
+  &__element-left {
+    padding-left: $mobile-side-margin;
+  }
+
+  &__element-right {
+    padding-right: $mobile-side-margin;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__order-machine-name {
+    height: 50%;
+    display: flex;
+    align-items: flex-end;
+    font: $font-sc-subtitle;
+    padding-bottom: 5px;
+  }
+
+  &__order-timestamp {
+    height: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    padding-top: 5px;
+  }
+
+  &__order-date {
+    width: 84px;
+  }
+
+  &__order-time {
+    width: 84px;
+  }
+
+  &__order-amount {
+    font: $font-sc-paragraph;
+  }
+
+  &__summary {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-primary;
+    border-top: 1px solid rgba($color-text-dark, .4);
+    height: $mobile-top-header-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: $font-sc-input-1;
+    color: $color-text-dark;
+  }
+}
