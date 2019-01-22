@@ -33,9 +33,9 @@ export class HomeComponent implements OnInit {
       routeName = 'coffee-preferences';
     }
 
-    if (this.buttonsEnabled) {
+    // if (this.buttonsEnabled) {
       this.router.navigate([routeName]);
-    }
+    // }
   }
 
 }
