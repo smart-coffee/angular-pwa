@@ -14,10 +14,17 @@ export class CoffeeJobService {
 
   constructor(private http: HttpClient) { }
 
-  getJobs(): Observable<any> {
+  getAllJobs(): Observable<any> {
     return this.http.get<any>(`${environment.webApiUrl}/jobs`)
       .pipe(
-        catchError(this._error.handleError<any>(`getJobs`))
+        catchError(this._error.handleError<any>(`getAllJobs`))
+      );
+  }
+
+  getCurrentUserJobs(): Observable<any> {
+    return this.http.get<any>(`${environment.webApiUrl}/users/current/jobs`)
+      .pipe(
+        catchError(this._error.handleError<any>(`getCurrentUserJobs`))
       );
   }
 }

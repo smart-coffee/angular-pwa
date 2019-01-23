@@ -18,7 +18,6 @@
     top: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid rgba($color-text-dark, .4);
   }
 
   &__header {
@@ -72,6 +71,6 @@
   }
 
   &__content {
-    padding-top: $mobile-top-header-height + $mobile-bot-header-height;
+    margin-top: $mobile-top-header-height + $mobile-bot-header-height;
   }
 }

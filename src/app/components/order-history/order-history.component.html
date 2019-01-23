@@ -1,21 +1,22 @@
 <div class="order-history">
 
-  <div class="order-history__element">
+  <div class="order-history__element" *ngFor="let coffeeJob of orderHistory">
     <div class="order-history__element-left">
       <div class="order-history__order-machine-name">
-        <span>Winston</span>
+        <span>{{coffeeJob.machineName}}</span>
       </div>
       <div  class="order-history__order-timestamp">
-        <span class="order-history__order-date">15.01.2019</span>
-        <span class="order-history__order-time">15:30 Uhr</span>
+        <span class="order-history__order-date">{{coffeeJob.creationDate | date: 'dd.MM.yyyy'}}</span>
+        <span class="order-history__order-time">{{coffeeJob.creationDate | date: 'H:mm'}} Uhr</span>
       </div>
     </div>
     <div class="order-history__element-right">
-      <span class="order-history__order-amount">10 Cent</span>
+      <span class="order-history__order-amount">{{coffeeJob.priceInCents}} Cent</span>
     </div>
   </div>
 
   <div class="order-history__summary">
-    Insgesamt 8 Kaffees für 80 Cent
+    Insgesamt {{totalCoffeeAmount}} {{totalCoffeeAmount > 1 ? 'Kaffees' : 'Kaffee'}} für {{(totalPriceInCents / 100) | currency:'EUR':'symbol':'2.2-2':'de-DE'}}
   </div>
 </div>
+<app-sc-modal *ngIf="showNotificationModal" [type]="modalType" [messages]="modalMessages" (click)="showNotificationModal = false"></app-sc-modal>

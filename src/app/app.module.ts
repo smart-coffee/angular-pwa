@@ -5,6 +5,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import localeDeExtra from '@angular/common/locales/extra/de';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -33,6 +36,8 @@ import { CoffeePreparationComponent } from './components/coffee-preparation/coff
 import { ScModalComponent } from './components/sc-modal/sc-modal.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { MachineStatsComponent } from './components/machine-stats/machine-stats.component';
+
+registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 
 @NgModule({
   declarations: [
