@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div class="analysis__content">
+  <div class="analysis__content" (swiperight)="menuState = 1" (swipeleft)="menuState = 2">
     <app-order-history *ngIf="menuState == 1"></app-order-history>
     <app-machine-stats *ngIf="menuState == 2"></app-machine-stats>
   </div>

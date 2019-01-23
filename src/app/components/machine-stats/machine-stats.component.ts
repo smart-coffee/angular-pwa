@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CoffeeJobService} from '../../services/coffee-job.service';
+import { CoffeeJobService } from '../../services/coffee-job.service';
 
 @Component({
   selector: 'app-machine-stats',

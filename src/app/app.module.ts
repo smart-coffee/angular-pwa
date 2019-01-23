@@ -8,6 +8,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
+import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any> {
+    'pinch': { enable: false },
+    'rotate': { enable: false }
+  };
+}
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -76,6 +84,7 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/'},
+    { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
