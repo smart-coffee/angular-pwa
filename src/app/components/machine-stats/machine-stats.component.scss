@@ -24,6 +24,9 @@
   &__stat-description {
     position: absolute;
     margin-left: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   &__background-image {

@@ -4,8 +4,8 @@
   </div>
   <div class="machine-stats__element">
     <div class="machine-stats__stat-description">
-      <span class="machine-stats__stat-value">180</span>
-      <span class="machine-stats__stat-text">Kaffees gebraut</span>
+      <div class="machine-stats__stat-value">{{totalAmountOfCoffeesBrewed}}</div>
+      <div class="machine-stats__stat-text">Kaffees gebraut</div>
     </div>
     <img class="machine-stats__background-image" alt="back-icon" src="../../../assets/pictograms/stats/background/Cream.svg"/>
   </div>
@@ -26,3 +26,4 @@
     <img class="machine-stats__background-image" alt="back-icon" src="../../../assets/pictograms/stats/background/Coffee.svg"/>
   </div>
 </div>
+<app-sc-modal *ngIf="showNotificationModal" [type]="modalType" [messages]="modalMessages" (click)="showNotificationModal = false"></app-sc-modal>
