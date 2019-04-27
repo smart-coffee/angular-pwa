@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   webApiUrl: 'http://localhost:5000/api',
-  balenaApiUrl: 'https://localhost:5001/api/balena/sandbox-test',
+  balenaApiUrl: 'https://localhost:5001/api/balena/smart-coffee',
   machineApiUrl: '' // TODO: insert this url
 };
 
