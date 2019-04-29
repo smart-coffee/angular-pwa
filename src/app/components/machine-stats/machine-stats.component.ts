@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeJobService } from '../../services/coffee-job.service';
+import { CoffeeMachineService } from '../../services/coffee-machine.service';
 
 @Component({
   selector: 'app-machine-stats',
@@ -14,7 +15,7 @@ export class MachineStatsComponent implements OnInit {
   modalMessages: string[];
   modalType: string;
 
-  constructor(private jobService: CoffeeJobService) { }
+  constructor(private jobService: CoffeeJobService, private coffeeMachineService: CoffeeMachineService) { }
 
   ngOnInit() {
     this.totalAmountOfCoffeesBrewed = 0;
@@ -22,9 +23,11 @@ export class MachineStatsComponent implements OnInit {
   }
 
   setMachineStats() {
-    this.jobService.getAllJobs()
-      .subscribe( jobs => {
-        this.totalAmountOfCoffeesBrewed = jobs.length;
+    const currentMachine = JSON.parse(localStorage.getItem('currentMachine'));
+    const currentMachineId = currentMachine.id
+    this.jobService.getCoffeeMachineJobsCount(currentMachineId)
+      .subscribe( count => {
+        this.totalAmountOfCoffeesBrewed = count.size;
       }, error => {
         this.showNotificationModal = true;
         this.modalType = 'error';

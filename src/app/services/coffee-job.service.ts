@@ -27,4 +27,18 @@ export class CoffeeJobService {
         catchError(this._error.handleError<any>(`getCurrentUserJobs`))
       );
   }
+
+  getCoffeeMachineJobs(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.webApiUrl}/coffee/machines/${id}/jobs`)
+      .pipe(
+        catchError(this._error.handleError<any>(`getCoffeeMachineJobs`))
+      );
+  }
+
+  getCoffeeMachineJobsCount(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.webApiUrl}/coffee/machines/${id}/jobs/count`)
+      .pipe(
+        catchError(this._error.handleError<any>(`getCoffeeMachineJobsCount`))
+      );
+  }
 }
